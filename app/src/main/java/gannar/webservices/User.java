@@ -25,6 +25,11 @@ public class User
     @SerializedName("Country")
     private String country;
 
+    public User()
+    {
+        //Empty constructor
+    }
+
     public User( String email, String firstName, String lastName, String phoneNumber) {
         this.id = id;
         this.email = email;

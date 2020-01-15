@@ -58,8 +58,11 @@ public class addUser extends Fragment
                 }
                 else
                 {
-                    User user = new User(email.getText().toString(),
-                        firstName.getText().toString(), lastName.getText().toString(), phoneNumber.getText().toString());
+                    User user = new User();
+                    user.setEmail(email.getText().toString());
+                    user.setEmail(firstName.getText().toString());
+                    user.setEmail(lastName.getText().toString());
+                    user.setEmail(phoneNumber.getText().toString());
 
                     ApiUtil.getRetrofitClass().addUserInstance(user).enqueue(new Callback<User>() {
                         @Override

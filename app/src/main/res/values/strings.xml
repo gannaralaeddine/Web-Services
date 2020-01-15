@@ -12,4 +12,6 @@
     <string name="e_mail">E-Mail</string>
     <string name="first_name">First_name</string>
     <string name="last_name">Last_name</string>
+    <string name="update_user">Update User</string>
+    <string name="phone_number">Phone number</string>
 </resources>

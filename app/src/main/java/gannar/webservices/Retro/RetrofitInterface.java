@@ -20,11 +20,11 @@ public interface RetrofitInterface
     public Call <List<User>> getUsers();
 
     //Get user by id
-    @GET("api/Users1/{id}")
+    @GET("api/Users1/{Id}")
     public Call <User> getUserById(@Path("Id") int id);
 
     //Delete user by id
-    @DELETE("api/Users1/{id}")
+    @DELETE("api/Users1/{Id}")
     public Call <User> deleteUserById(@Path("Id") int id);
 
     //Add user instance
@@ -39,7 +39,7 @@ public interface RetrofitInterface
                                     @Field("PhoneNumber") String country);
 
     //Update user
-    @PUT("api/Users1/{id}")
+    @PUT("api/Users1/{Id}")
     public Call <User> updateUser(@Path("Id") int id,
                                   @Field("Email") String cin,
                                   @Field("FName") String name,
