@@ -27,25 +27,24 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.viewHolder>
 
     public class viewHolder extends RecyclerView.ViewHolder
     {
-        private TextView cin;
-        private TextView name;
-        private TextView age;
-        private TextView coutry;
+        private TextView id, email, firstName, lastName, phoneNumber, age, country;
 
-        public viewHolder(@NonNull View itemView) {
+        private viewHolder(@NonNull View itemView) {
             super(itemView);
-            cin = itemView.findViewById(R.id.cin);
-            name = itemView.findViewById(R.id.name);
-            age = itemView.findViewById(R.id.age);
-            coutry = itemView.findViewById(R.id.coutry);
+            id = itemView.findViewById(R.id.item_user_id);
+            email = itemView.findViewById(R.id.item_user_email);
+            firstName = itemView.findViewById(R.id.item_user_first_name);
+            lastName = itemView.findViewById(R.id.item_user_last_name);
+            phoneNumber = itemView.findViewById(R.id.item_user_phone_number);
+            age = itemView.findViewById(R.id.item_user_age);
+            country = itemView.findViewById(R.id.item_user_coutry);
         }
     }
 
-    @NonNull
+        @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
-        //View view = LayoutInflater.from(context).inflate(R.layout.item_user, parent);
         View view = LayoutInflater.from(context).inflate(R.layout.item_user, parent, false);
         return new UsersAdapter.viewHolder(view);
     }
@@ -54,11 +53,13 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.viewHolder>
     public void onBindViewHolder(@NonNull viewHolder holder, int position)
     {
         User user = users.get(position);
-
-        holder.cin.setText(user.getEmail());
-        holder.name.setText(user.getFirstName());
-        holder.age.setText(user.getLastName());
-        holder.coutry.setText(user.getPhoneNumber());
+        holder.id.setText(Integer.toString(user.getId()));
+        holder.email.setText(user.getEmail());
+        holder.firstName.setText(user.getFirstName());
+        holder.lastName.setText(user.getLastName());
+        holder.phoneNumber.setText(user.getPhoneNumber());
+        holder.age.setText(user.getAge());
+        holder.country.setText(user.getCountry());
     }
 
     @Override

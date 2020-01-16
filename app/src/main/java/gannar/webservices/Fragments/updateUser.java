@@ -1,6 +1,4 @@
 package gannar.webservices.Fragments;
-
-
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -19,19 +17,17 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
 public class updateUser extends Fragment
 {
 
-    private EditText id, email, firstName, lastName, phoneNumber, age;
+    private EditText id, email, firstName, lastName, phoneNumber, age, country;
 
     public updateUser() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -45,6 +41,7 @@ public class updateUser extends Fragment
         lastName = view.findViewById(R.id.update_last_name);
         phoneNumber = view.findViewById(R.id.update_phone_number);
         age = view.findViewById(R.id.update_age);
+        country = view.findViewById(R.id.update_country);
 
         view.findViewById(R.id.btn_validate_updateUser).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,9 +55,15 @@ public class updateUser extends Fragment
                 }
                 else
                 {
-                    ApiUtil.getRetrofitClass().updateUser(Integer.parseInt(id.getText().toString()), email.getText().toString(),
-                                                                            firstName.getText().toString(), lastName.getText().toString(),
-                                                                            phoneNumber.getText().toString()).enqueue(new Callback<User>() {
+                    User user = new User();
+                    user.setEmail(email.getText().toString());
+                    user.setFirstName(firstName.getText().toString());
+                    user.setLastName(lastName.getText().toString());
+                    user.setPhoneNumber(phoneNumber.getText().toString());
+                    user.setAge(age.getText().toString());
+                    user.setCountry(country.getText().toString());
+
+                    ApiUtil.getRetrofitClass().updateUser(Integer.parseInt(id.getText().toString()), user).enqueue(new Callback<User>() {
                         @Override
                         public void onResponse(Call<User> call, Response<User> response) {
                             Toast.makeText(getContext(), "The user is updated successfully" , Toast.LENGTH_SHORT).show();
@@ -74,7 +77,6 @@ public class updateUser extends Fragment
                 }
             }
         });
-
 
         return view;
     }

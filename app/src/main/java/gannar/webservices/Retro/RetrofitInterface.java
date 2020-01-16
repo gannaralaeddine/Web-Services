@@ -29,21 +29,28 @@ public interface RetrofitInterface
 
     //Add user instance
     @POST("api/Users1")
-    public Call <User> addUserInstance(@Body User user);
+    public Call <User> addUser(@Body User user);
 
     //Add user fields
     @POST("api/Users1")
-    public Call <User> addUserField(@Field("Email") String cin,
-                                    @Field("FName") String name,
-                                    @Field("LName") String age,
-                                    @Field("PhoneNumber") String country);
+    public Call <User> addUser(@Field("Email") String email,
+                                    @Field("FName") String firstName,
+                                    @Field("LName") String lastName,
+                                    @Field("PhoneNumber") String phoneNumber,
+                                    @Field("Age") String age,
+                                    @Field("Country") String country);
 
     //Update user
     @PUT("api/Users1/{Id}")
     public Call <User> updateUser(@Path("Id") int id,
-                                  @Field("Email") String cin,
-                                  @Field("FName") String name,
-                                  @Field("LName") String age,
-                                  @Field("PhoneNumber") String country);
+                                  @Field("Email") String email,
+                                  @Field("FName") String firstName,
+                                  @Field("LName") String lastName,
+                                  @Field("PhoneNumber") String phoneNumber,
+                                  @Field("Age") String age,
+                                  @Field("Country") String country);
 
+    //Update user
+    @PUT("api/Users1/{Id}")
+    public Call <User> updateUser(@Path("Id") int id, @Body User user);
 }

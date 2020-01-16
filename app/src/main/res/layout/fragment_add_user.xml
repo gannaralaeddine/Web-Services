@@ -20,21 +20,13 @@
             android:textSize="40sp"
             android:layout_marginBottom="10dp"/>
 
-        <EditText
-            android:id="@+id/add_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/userId"
-            android:textSize="30sp"
-            android:inputType="text"
-            android:layout_marginBottom="10dp"/>
 
         <EditText
             android:id="@+id/add_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/e_mail"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:inputType="textEmailAddress"
             android:layout_marginBottom="10dp"/>
 
@@ -43,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/first_name"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:inputType="text"
             android:layout_marginBottom="10dp"/>
 
@@ -52,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/last_name"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:inputType="text"
             android:layout_marginBottom="10dp"/>
 
@@ -61,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/phone_number"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:inputType="phone"
             android:layout_marginBottom="10dp"/>
 
@@ -70,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/age"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:inputType="numberDecimal"
             android:layout_marginBottom="10dp"/>
 
@@ -79,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/country"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:inputType="text"
             android:layout_marginBottom="10dp"/>
 

@@ -48,7 +48,12 @@ public class getUser extends Fragment {
                         public void onResponse(Call<User> call, Response<User> response)
                         {
                             User user = response.body();
-                            Toast.makeText(getContext(), "Cin: "+user.getEmail()+"\nFirst name: "+user.getFirstName()+"\nLast name: "+user.getLastName()+"\nPhone Number: "+user.getPhoneNumber(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "E-mail: "+user.getEmail()+
+                                            "\nFirst name: "+user.getFirstName()+
+                                            "\nLast name: "+user.getLastName()+
+                                            "\nPhone Number: "+user.getPhoneNumber()+
+                                            "\nAge: "+user.getAge()+
+                                            "\nCountry: "+user.getCountry(), Toast.LENGTH_LONG).show();
                         }
 
                         @Override

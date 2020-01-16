@@ -2,7 +2,6 @@
     <string name="app_name">Web Services</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="userId">User Id</string>
     <string name="validate">Validate</string>
     <string name="cin">Cin</string>
     <string name="name">Name</string>
@@ -14,4 +13,8 @@
     <string name="last_name">Last_name</string>
     <string name="update_user">Update User</string>
     <string name="phone_number">Phone number</string>
+    <string name="delete_user">Delete user</string>
+    <string name="all_users">All users</string>
+    <string name="display_user">Display user</string>
+    <string name="userId">User ID</string>
 </resources>

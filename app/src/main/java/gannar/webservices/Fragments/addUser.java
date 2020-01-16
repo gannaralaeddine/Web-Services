@@ -26,7 +26,7 @@ import retrofit2.Response;
 public class addUser extends Fragment
 {
 
-    private EditText id, email, firstName, lastName, phoneNumber;
+    private EditText email, firstName, lastName, phoneNumber, age, country;
 
 
     public addUser() {
@@ -40,12 +40,13 @@ public class addUser extends Fragment
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_add_user, container, false);
 
-        id = view.findViewById(R.id.add_id);
         email = view.findViewById(R.id.add_email);
         firstName = view.findViewById(R.id.add_first_name);
         lastName = view.findViewById(R.id.add_last_name);
         phoneNumber = view.findViewById(R.id.add_phone_number);
+        age = view.findViewById(R.id.add_age);
 
+        country = view.findViewById(R.id.add_country);
         view.findViewById(R.id.btn_validate_addUser).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -60,11 +61,13 @@ public class addUser extends Fragment
                 {
                     User user = new User();
                     user.setEmail(email.getText().toString());
-                    user.setEmail(firstName.getText().toString());
-                    user.setEmail(lastName.getText().toString());
-                    user.setEmail(phoneNumber.getText().toString());
+                    user.setFirstName(firstName.getText().toString());
+                    user.setLastName(lastName.getText().toString());
+                    user.setPhoneNumber(phoneNumber.getText().toString());
+                    user.setAge(age.getText().toString());
+                    user.setCountry(country.getText().toString());
 
-                    ApiUtil.getRetrofitClass().addUserInstance(user).enqueue(new Callback<User>() {
+                    ApiUtil.getRetrofitClass().addUser(user).enqueue(new Callback<User>() {
                         @Override
                         public void onResponse(Call<User> call, Response<User> response) {
                             Toast.makeText(getContext(), "A new user has been added" , Toast.LENGTH_SHORT).show();

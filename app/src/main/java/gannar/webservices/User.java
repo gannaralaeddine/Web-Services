@@ -30,7 +30,7 @@ public class User
         //Empty constructor
     }
 
-    public User( String email, String firstName, String lastName, String phoneNumber) {
+    public User( String email, String firstName, String lastName, String phoneNumber, String age, String country) {
         this.id = id;
         this.email = email;
         this.firstName = firstName;

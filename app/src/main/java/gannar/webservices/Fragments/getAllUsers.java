@@ -1,6 +1,5 @@
 package gannar.webservices.Fragments;
 
-
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -23,13 +22,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
 public class getAllUsers extends Fragment
 {
-    RecyclerView recyclerView;
+    private RecyclerView recyclerView;
 
     public getAllUsers() {
         // Required empty public constructor
@@ -42,20 +40,16 @@ public class getAllUsers extends Fragment
 
             recyclerView = view.findViewById(R.id.recycleView);
 
-
-
         ApiUtil.getRetrofitClass().getUsers().enqueue(new Callback<List<User>>() {
             @Override
             public void onResponse(Call<List<User>> call, Response<List<User>> response)
             {
-
                 List <User> usersList = response.body();
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+                recyclerView.setLayoutManager(linearLayoutManager);
+                recyclerView.setHasFixedSize(true);
                 UsersAdapter adapter = new UsersAdapter(getContext(), usersList);
                 recyclerView.setAdapter(adapter);
-                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-                linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-                recyclerView.setLayoutManager(linearLayoutManager);
-
             }
 
             @Override
